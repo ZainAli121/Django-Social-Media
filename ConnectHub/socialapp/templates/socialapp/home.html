@@ -1,0 +1,67 @@
+{% extends "main.html" %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .post-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .post-content {
+        padding: 20px;
+    }
+
+    .post-footer {
+        padding: 10px 20px;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    p {
+        margin: 0 0 10px; /* Add margin at the bottom of each paragraph */
+    }
+
+    a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: bold; /* Add bold font-weight to the username/feeling */
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .post-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+</style>
+{% for post in posts %}
+
+<div class="post-container">
+    <div class="post-content">
+        <p>{{post.owner.name}} is feeling {{post.tag}}!</p>
+        <p>{{post.desc}}</p>
+        <img src="{{post.image.url}}" alt="Post Image" class="post-image">
+    </div>
+    <div class="post-footer">
+        <p>Posted by <a href=" ">{{post.owner.name}}</a> on {{post.created}}</p>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock content %}
