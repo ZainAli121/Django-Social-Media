@@ -10,7 +10,7 @@
     <div class="post-content">
         <div class="owner-info">
             <img src="{{post.owner.profile_pic.url}}" alt="{{post.owner.name}}'s Profile Pic" class="owner-avatar">
-            <p>{{post.owner.name}} is feeling {{post.tag}}!</p>
+           <a href="{% url 'profile' post.owner.id %}"> <p>{{post.owner.name}} is feeling {{post.tag}}!</p></a>
         </div>
         <p>{{post.desc}}</p>
         

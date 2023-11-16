@@ -4,7 +4,7 @@
     <a href="{% url 'home' %}"><div class="navbar-logo">Social App</div></a>
     <div class="navbar-links">
         <a href="{% url 'home' %}" class="navbar-link">Home</a>
-        <a href="#" class="navbar-link">Profile</a>
+        <a href="{% url 'profile' request.user.id %}" class="navbar-link">Profile</a>
         <a href="#" class="navbar-link">Messages</a>
         <a href="{% url 'create-Post' %}" class="navbar-link">Create Post</a>
         {% if request.user.is_authenticated %}
@@ -15,7 +15,7 @@
 
         <div class="navbar-user">
             <img src="{{user.profile_pic.url}}" alt="User Avatar" class="navbar-avatar">
-            <div>{{request.user.name}}</div>
+            <a href="{% url 'profile' request.user.id %}"><div>{{request.user.name}}</div></a>
         </div>
     </div>
 </div>
