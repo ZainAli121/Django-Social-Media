@@ -8,14 +8,25 @@
 
 <div class="post-container">
     <div class="post-content">
-        <p>{{post.owner.name}} is feeling {{post.tag}}!</p>
+        <div class="owner-info">
+            <img src="{{post.owner.profile_pic.url}}" alt="{{post.owner.name}}'s Profile Pic" class="owner-avatar">
+            <p>{{post.owner.name}} is feeling {{post.tag}}!</p>
+        </div>
         <p>{{post.desc}}</p>
+        
+        {% if post.image %}
         <img src="{{post.image.url}}" alt="Post Image" class="post-image">
+        {% endif %}
     </div>
     <div class="post-footer">
         <p>Posted by <a href="">{{post.owner.name}}</a> on {{post.created}}</p>
+        {% if request.user == post.owner %}
+        <a href="{% url 'update-Post' post.id %}">Update</a>
+        <a href="{% url 'delete-Post' post.id %}">Delete</a>
+        {% endif %}
     </div>
 </div>
+
 
 {% endfor %}
 

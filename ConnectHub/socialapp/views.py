@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, login, logout
 from .models import *
 from django.contrib import messages
 from .forms import *
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 def home(request):
     posts = Post.objects.all()
@@ -47,3 +49,54 @@ def signupUser(request):
     context = {'form': form}
     return render(request, 'socialapp/register.html', context)
 
+@login_required(login_url='login')
+def createPost(request):
+    form = CreatePost()
+    tags = Tag.objects.all()
+
+    if request.method == 'POST':
+        # tag_name = request.POST.get('tag')
+        # tag, created = Tag.objects.get_or_create(name = tag_name)
+        # Post.objects.create(
+        #     owner = request.user,
+        #     tag = tag,
+        #     desc = request.POST.get('desc'),
+        #     image = request.POST.get('image')
+        # )
+        form = CreatePost(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.owner = request.user
+            post.save()
+            return redirect('home')
+
+    context = {'form': form, 'tags': tags}
+    return render(request, 'socialapp/create-post.html', context)
+
+
+@login_required(login_url='login')
+def updatePost(request, pk):
+    post = Post.objects.get(id=pk)
+    tags = Tag.objects.all()
+
+    if request.user != post.owner:
+        return HttpResponse("You are not owner of this post!")
+
+    form = CreatePost(instance=post)
+
+    if request.method == 'POST':
+        form = CreatePost(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+
+    context = {'form': form ,'tags': tags}
+    return render(request, 'socialapp/create-post.html', context)
+
+@login_required(login_url='login')
+def deletePost(request, pk):
+    post = Post.objects.get(id=pk)
+    if request.method == 'POST':
+        post.delete()
+        return redirect('home')
+    return render(request, 'socialapp/delete.html', {'obj': post})

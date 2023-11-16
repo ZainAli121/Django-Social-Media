@@ -19,7 +19,7 @@ class Post(models.Model):
     tag = models.OneToOneField('Tag', on_delete=models.CASCADE)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(null=True,blank=True,default="default.jpg")
+    image = models.ImageField(null=True, blank=True, default="default.jpg")
 
     def __str__(self):
         return f"Post by {self.owner.username}"

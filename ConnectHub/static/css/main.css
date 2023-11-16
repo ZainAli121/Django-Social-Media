@@ -155,3 +155,14 @@ a:hover {
 .form-footer a:hover {
     text-decoration: underline;
 }
+/* =========================================== */
+
+
+.owner-avatar {
+width: 40px; /* Adjust the width to your preference */
+height: 40px; /* Adjust the height to your preference */
+border-radius: 50%;
+margin-right: 10px; /* Adjust the margin as needed */
+}
+
+
