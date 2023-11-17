@@ -21,6 +21,9 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(null=True, blank=True, default="default.jpg")
 
+    class Meta:
+        ordering = ['-updated', '-created']
+
     def __str__(self):
         return f"Post by {self.owner.username}"
 

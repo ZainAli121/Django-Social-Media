@@ -101,12 +101,14 @@ def deletePost(request, pk):
         return redirect('home')
     return render(request, 'socialapp/delete.html', {'obj': post})
 
+
 @login_required(login_url='login')
 def profile(request, pk):
     user = User.objects.get(id=pk)
     posts = user.post_set.all()
     context = {'user': user, 'posts': posts}
     return render(request, 'socialapp/userProfile.html', context)
+
 
 @login_required(login_url='login')
 def updateProfile(request, pk):

@@ -1,21 +1,67 @@
 {% load static %}
 
-<div class="navbar">
-    <a href="{% url 'home' %}"><div class="navbar-logo">Social App</div></a>
-    <div class="navbar-links">
-        <a href="{% url 'home' %}" class="navbar-link">Home</a>
-        <a href="{% url 'profile' request.user.id %}" class="navbar-link">Profile</a>
-        <a href="#" class="navbar-link">Messages</a>
-        <a href="{% url 'create-Post' %}" class="navbar-link">Create Post</a>
-        {% if request.user.is_authenticated %}
-        <a href="{% url 'logout' %}" class="navbar-link">Logout</a>
-        {% else %}
-        <a href="{% url 'login' %}" class="navbar-link">Login</a>
-        {% endif %}
+<div class="div">
+  <div class="div-2">
+    <div class="div-3">
+      <div class="column">
+        <div class="div-4">
+          <div class="div-5">
+            <img loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/03412493-f23c-4f46-b5ec-55f90778e3e9?" class="img" />
 
-        <div class="navbar-user">
-            <img src="{{user.profile_pic.url}}" alt="User Avatar" class="navbar-avatar">
-            <a href="{% url 'profile' request.user.id %}"><div>{{request.user.name}}</div></a>
+            <a href="{% url 'home' %}">
+              <div class="div-6">
+                <img loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/b688d377-4cc5-463d-9cfe-fe11fd202021?"
+                  class="img-2" />
+                <div class="div-7">Home</div>
+              </div>
+            </a>
+
+            <div class="div-8">
+              <img loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/43a72aea-739a-4ef9-8a33-3b776aea864e?"
+                class="img-3" />
+              <div class="div-9">Search</div>
+            </div>
+
+            <div class="div-14">
+              <img loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c82878ef-f17c-482a-9476-653b85f12660?"
+                class="img-6" />
+              <div class="div-15">Messages</div>
+            </div>
+
+            <div class="div-16">
+              <img loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/59d6f2bd-36a0-4bc0-b337-9104a4af80a6?"
+                class="img-7" />
+              <div class="div-17">Notifications</div>
+            </div>
+
+            <a href="{% url 'create-Post' %}">
+              <div class="div-18">
+                <img loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/e1745886-cfdc-470d-a8d3-7ded4e6ef9e0?"
+                  class="img-8" />
+                <div class="div-19">Create</div>
+              </div>
+            </a>
+
+            <a href="{% url 'profile' request.user.id %}">
+              <div class="div-20">
+                <img loading="lazy" srcset="{{request.user.profile_pic.url}}" class="img-9" />
+                <div class="div-21">Profile</div>
+              </div>
+            </a>
+
+            <div class="div-22">
+              <img loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/6bc4674e-be39-4dd8-a64c-f6d0f050a1d1?"
+                class="img-10" />
+              <div class="div-23">More</div>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+  
