@@ -2,240 +2,28 @@
 
 {% block content %}
 
-<div class="column-2">
-    <div class="div-24">
-        <div class="div-25">
-            <div class="column-3">
-                <div class="div-26">
-                    <!-- <div class="div-27">
-                    <div class="div-28">
-                      <div class="div-29">
-                        <div class="div-30">
-                          <img
-                            loading="lazy"
-                            srcset="..."
-                            class="img-11"
-                          />
-                          <img
-                            loading="lazy"
-                            srcset="..."
-                            class="img-12"
-                          />
-                        </div>
-                        <div class="div-31">
-                          <div class="div-32">itsdougthepug</div>
-                          <div class="div-33">openaidalle</div>
-                        </div>
-                      </div>
-                      <div class="div-34">
-                        <img
-                          loading="lazy"
-                          srcset="..."
-                          class="img-13"
-                        />
-                        <div class="div-35">lewishamilton</div>
-                      </div>
-                      <div class="div-36">
-                        <img
-                          loading="lazy"
-                          srcset="..."
-                          class="img-14"
-                        />
-                        <div class="div-37">wahab.xyz</div>
-                      </div>
-                      <div class="div-38">
-                        <img
-                          loading="lazy"
-                          srcset="..."
-                          class="img-15"
-                        />
-                        <div class="div-39">defavours</div>
-                      </div>
-                      <div class="div-40">
-                        <img
-                          loading="lazy"
-                          srcset="..."
-                          class="img-16"
-                        />
-                        <div class="div-41">mkbhd</div>
-                      </div>
-                    </div>
-                  </div> -->
-                    {% for post in posts %}
-                    <div class="div-42">
-                        <div class="div-43">
-                            <div class="div-44">
-                                <div class="div-45">
-                                    <img loading="lazy" srcset="{{post.owner.profile_pic.url}}" class="img-17" />
-                                    <div class="div-46">
-                                        <div class="div-47">
-                                            <a href="{% url 'profile' post.owner.id %}">
-                                                <div class="div-48">{{post.owner.name}}</div>
-                                            </a>
-                                        </div>
-                                        <div class="div-49">• {{post.created |timesince}}</div>
-                                    </div>
-                                </div>
-                                <img loading="lazy"
-                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/441f17f5-5284-4f9c-b3b2-01df646ae945?"
-                                    class="img-19" />
-                            </div>
-                        </div>
-                        <div class="div-50">
-                            <img loading="lazy" srcset="{{post.image.url}}" class="img-20" />
-                        </div>
-                        <div class="div-51">
-                            <div class="div-52">
-                                <div class="div-53">
-                                    <img loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/f593fae2-a01b-4c28-8631-f353f777fc42?"
-                                        class="img-21" />
-                                    <img loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/50436715-02ca-4951-ab6f-5236947b4be3?"
-                                        class="img-22" />
-                                    <img loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/84d5acae-9bf9-4111-9b2b-99396013fbfe?"
-                                        class="img-23" />
-                                </div>
-                                <img loading="lazy"
-                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/ca7a08f4-80ea-4975-84cf-d9d61f278e45?"
-                                    class="img-24" />
-                            </div>
-                            <div class="div-54">741,368 likes</div>
-                            <div class="div-55">
-                                <a href="{% url 'profile' post.owner.id %}">
-                                    <div class="div-56">{{post.owner}}</div>
-                                </a>
-                                <div class="div-57">
-                                    {{post.desc}}
-                                </div>
-                            </div>
-                            <div class="div-58">See translation</div>
-                            <div class="div-59">View all 13,384 comments</div>
-                            <div class="div-60">
-                                <div class="div-61">Add a comment…</div>
-                                <img loading="lazy"
-                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/4f163ef3-17e1-4c90-8fb5-b989f26faf7f?"
-                                    class="img-25" />
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-
-                    <!-- <div class="column-4">
-                <div class="div-121">
-                  <div class="div-122">
-                    <div class="div-123">
-                      <img
-                        loading="lazy"
-                        srcset="..."
-                        class="img-51"
-                      />
-                      <div class="div-124">
-                        <div class="div-125">upvox_</div>
-                        <div class="div-126">Upvox</div>
-                      </div>
-                    </div>
-                    <div class="div-127">Switch</div>
-                  </div>
-                  <div class="div-128">
-                    <div class="div-129">
-                      <div class="div-130">Suggestions for you</div>
-                      <div class="div-131">See All</div>
-                    </div>
-                    <div class="div-132">
-                      <div class="div-133">
-                        <div class="div-134">
-                          <img
-                            loading="lazy"
-                            srcset="..."
-                            class="img-52"
-                          />
-                          <div class="div-135">
-                            <div class="div-136">imkir</div>
-                            <div class="div-137">Follows you</div>
-                          </div>
-                        </div>
-                        <div class="div-138">
-                          <img
-                            loading="lazy"
-                            srcset="..."
-                            class="img-53"
-                          />
-                          <div class="div-139">
-                            <div class="div-140">organic__al</div>
-                            <div class="div-141">Followed by chirag_singla17</div>
-                          </div>
-                        </div>
-                        <div class="div-142">
-                          <img
-                            loading="lazy"
-                            srcset="..."
-                            class="img-54"
-                          />
-                          <div class="div-143">
-                            <div class="div-144">im_gr</div>
-                            <div class="div-145">Followed by chirag_singla17</div>
-                          </div>
-                        </div>
-                        <div class="div-146">
-                          <img
-                            loading="lazy"
-                            srcset="..."
-                            class="img-55"
-                          />
-                          <div class="div-147">
-                            <div class="div-148">abh952</div>
-                            <div class="div-149">Follows you</div>
-                          </div>
-                        </div>
-                        <div class="div-150">
-                          <img
-                            loading="lazy"
-                            srcset="..."
-                            class="img-56"
-                          />
-                          <div class="div-151">
-                            <div class="div-152">sakbrl</div>
-                            <div class="div-153">Follows you</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="div-154">
-                        <div class="div-155">Follow</div>
-                        <div class="div-156">Follow</div>
-                        <div class="div-157">Follow</div>
-                        <div class="div-158">Follow</div>
-                        <div class="div-159">Follow</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="div-160">
-                    <div class="div-161">About ·</div>
-                    <div class="div-162">Help ·</div>
-                    <div class="div-163">Press ·</div>
-                    <div class="div-164">API ·</div>
-                    <div class="div-165">Jobs ·</div>
-                    <div class="div-166">Privacy ·</div>
-                    <div class="div-167">Terms ·</div>
-                    <div class="div-168">Locations ·</div>
-                  </div>
-                  <div class="div-169">
-                    <div class="div-170">
-                      <div class="div-171">Language</div>
-                      <div class="div-172">·</div>
-                    </div>
-                    <div class="div-173">Meta Verified</div>
-                  </div>
-                  <div class="div-174">© 2023 Instagram from Meta</div>
-                </div>
-              </div> -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="main-content">
+  {% for post in posts %}
+  <div class="post">
+      <div class="user-info">
+          <img src="{{post.owner.profile_pic.url}}" alt="User Picture" class="user-pic">
+          <a href="{% url 'profile' post.owner.id %}"><span>{{post.owner.name}}</a> posted {{post.created |timesince}} ago</span>
+      </div>
+      <p>{{post.desc}}</p>
+      <img src="{{post.image.url}}" alt="Sample Image">
+      <div class="post-options">
+          <a href="#">
+              <i class="far fa-thumbs-up"></i> Like
+          </a>
+          <a href="#">
+              <i class="far fa-comment"></i> Comment
+          </a>
+          <a href="#">
+              <i class="fas fa-share"></i> Share
+          </a>
+      </div>
+  </div>
+  {% endfor %}
 </div>
 
 

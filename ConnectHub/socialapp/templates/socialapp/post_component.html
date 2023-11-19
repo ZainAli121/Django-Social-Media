@@ -1,0 +1,23 @@
+<div class="main-content">
+    {% for post in posts %}
+    <div class="post">
+        <div class="user-info">
+            <img src="{{post.owner.profile_pic.url}}" alt="User Picture" class="user-pic">
+            <span>{{post.owner.name}} posted {{post.created |timesince}} ago</span>
+        </div>
+        <p>{{post.desc}}</p>
+        <img src="{{post.image.url}}" alt="Sample Image">
+        <div class="post-options">
+            <a href="#">
+                <i class="far fa-thumbs-up"></i> Like
+            </a>
+            <a href="#">
+                <i class="far fa-comment"></i> Comment
+            </a>
+            <a href="#">
+                <i class="fas fa-share"></i> Share
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+  </div>

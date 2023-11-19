@@ -8,10 +8,15 @@ class MyUserForm(UserCreationForm):
         fields = ['name', 'username', 'email', 'password1', 'password2']
 
 
-class CustomUserForm(ModelForm):
+class CustomUserProfile(ModelForm):
     class Meta:
         model = User
-        fields = ['name', 'username', 'email', 'bio', 'profile_pic']
+        fields = ['name', 'username', 'bio', 'profile_pic']
+
+class CustomUserBio(ModelForm):
+    class Meta:
+        model = User
+        fields = ['gender', 'address', 'email', 'phone_number']
 
 class CreatePost(ModelForm):
     class Meta:

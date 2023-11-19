@@ -102,7 +102,6 @@ def deletePost(request, pk):
     return render(request, 'socialapp/delete.html', {'obj': post})
 
 
-@login_required(login_url='login')
 def profile(request, pk):
     user = User.objects.get(id=pk)
     posts = user.post_set.all()
@@ -111,11 +110,24 @@ def profile(request, pk):
 
 
 @login_required(login_url='login')
-def updateProfile(request, pk):
+def editProfile(request, pk):
     user = request.user
-    form = CustomUserForm(instance=user)
+    form = CustomUserProfile(instance=user)
     if request.method == 'POST':
-        form = CustomUserForm(request.POST, request.FILES, instance=user)
+        form = CustomUserProfile(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile', pk=user.id)
+    
+    context = {'form': form}
+    return render(request, 'socialapp/edit-user.html', context)
+
+@login_required(login_url='login')
+def editBio(request, pk):
+    user = request.user
+    form = CustomUserBio(instance=user)
+    if request.method == 'POST':
+        form = CustomUserBio(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
             return redirect('profile', pk=user.id)
