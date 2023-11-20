@@ -31,6 +31,46 @@ transition: background 0.3s;
 background-color: #555;
 }
 
+navbar-center {
+  flex-grow: 1;
+}
+
+.navbar form {
+  display: flex;
+}
+
+.navbar input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.navbar button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+.searchbar{
+  border-radius: 5px;
+background: #FFF;
+width: 500px;
+height: 40px;
+}
+.navbar-center{
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  position: absolute;
+  margin: 20px;
+  left: 500px;
+}
+
+.navbar button:hover {
+  background-color: #777;
+}
+
 /* Main Content - Posts */
 .main-content {
 flex: 1;
@@ -38,8 +78,22 @@ padding: 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-top: 70px;
+}
+.search-input {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
 }
 
+/* Style for the search icon */
+.search-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
 /* Sample Post Styling */
 .post {
 width: 100%;
@@ -106,6 +160,52 @@ margin-right: 5px;
 color: #888;
 font-size: 12px;
 }
+
+.post-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.post-menu-btn {
+  background-color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.post-menu-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.post-menu-content a {
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+.postchild{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-menu-content a:hover {
+  background-color: #ddd;
+}
+
+/* .post-menu:hover .post-menu-content {
+  display: block;
+} */
+
 
 /* User Profile Container */
 .user-profile {

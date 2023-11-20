@@ -1,6 +1,10 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+
 <div class="main-content">
-    {% for post in posts %}
-  
     <div class="post">
       <div class="postchild">
           <div class="user-info">
@@ -19,7 +23,7 @@
       </div>
        
         <p>{{post.desc}}</p>
-        <a href="{% url 'post' post.id %}"><img src="{{post.image.url}}" alt="Sample Image"></a>
+        <img src="{{post.image.url}}" alt="Sample Image">
         <div class="post-options">
             <a href="#">
                 <i class="far fa-thumbs-up"></i> Like
@@ -33,7 +37,6 @@
             
         </div>
     </div>
-    {% endfor %}
   </div>
   <script>
       let btns = document.getElementsByClassName('btn');
@@ -45,3 +48,4 @@
           });
       }
       </script>
+{% endblock content %}

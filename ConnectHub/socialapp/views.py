@@ -5,9 +5,16 @@ from django.contrib import messages
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.db.models import Q
 
 def home(request):
-    posts = Post.objects.all()
+    query = request.GET.get('query') if request.GET.get('query') != None else ''
+    posts = Post.objects.filter(
+    Q(owner__name__icontains=query) |
+    Q(tag__name__icontains=query) |
+    Q(desc__icontains=query)
+    )
+
     context = {'posts': posts}
     return render(request, 'socialapp/home.html', context)
 
@@ -135,3 +142,7 @@ def editBio(request, pk):
     context = {'form': form}
     return render(request, 'socialapp/edit-user.html', context)
 
+def post(request, pk):
+    post = Post.objects.get(id=pk)
+    context = {'post': post}
+    return render(request, 'socialapp/post.html', context)
