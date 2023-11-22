@@ -22,10 +22,10 @@
         <a href="{% url 'post' post.id %}"><img src="{{post.image.url}}" alt="Sample Image"></a>
         <div class="post-options">
             <a href="#">
-                <i class="far fa-thumbs-up"></i> Like
+                <i class="far fa-thumbs-up"></i> Like 
             </a>
             <a href="#">
-                <i class="far fa-comment"></i> Comment
+                <i class="far fa-comment"></i>{{post.comment_set.all.count}}   Comments
             </a>
             <a href="#">
                 <i class="fas fa-share"></i> Share

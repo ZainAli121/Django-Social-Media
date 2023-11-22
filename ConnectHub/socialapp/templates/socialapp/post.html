@@ -29,7 +29,7 @@
                 <i class="far fa-thumbs-up"></i> Like
             </a>
             <a href="#">
-                <i class="far fa-comment"></i> Comment
+                <i class="far fa-comment"></i>{{post_comments.count}} Comments
             </a>
             <a href="#">
                 <i class="fas fa-share"></i> Share
@@ -37,6 +37,25 @@
             
         </div>
     </div>
+
+    {% if request.user.is_authenticated %}
+    <div class="comments">
+        <h3>Comments</h3>
+        {% for comment in post_comments %}
+            <div class="comment">
+                <a href="{% url 'profile' comment.owner.id %}"><strong>{{ comment.owner.name }}</strong></a>
+                <span>{{ comment.body }}</span>
+            </div>
+        {% endfor %}
+
+        <!-- Comment Form -->
+        <form method="post" action="">
+            {% csrf_token %}
+            <textarea name="body" placeholder="Add a comment..." ></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+    </div>
+    {% endif %}
   </div>
   <script>
       let btns = document.getElementsByClassName('btn');

@@ -12,11 +12,11 @@ display: flex;
 /* Vertical Navbar */
 .navbar {
 width: 200px;
-background-color: #333;
+background-color: rgba(111, 103, 76, 0.369);
 height: 100vh;
 color: white;
 padding-top: 20px;
-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+box-shadow: 2px 0 5px rgba(187, 169, 169, 0.1);
 }
 
 .navbar a {
@@ -70,6 +70,21 @@ height: 40px;
 .navbar button:hover {
   background-color: #777;
 }
+
+/* Assuming your SVG images should have a max height of 20px and be vertically aligned to the middle */
+.navbar a img {
+  max-height: 20px;
+  vertical-align: middle;
+  margin-right: 5px; /* Adjust as needed to create space between the image and text */
+}
+
+/* Optional: Add some padding to the navbar links */
+.navbar a {
+  padding: 8px;
+  text-decoration: none; /* Remove underlines from links */
+  color: black; /* Set the text color */
+}
+
 
 /* Main Content - Posts */
 .main-content {
@@ -486,3 +501,54 @@ blockquote {
 .form__footer a:hover {
   text-decoration: underline; 
 }
+
+/* comments */
+/* Style for the comment section */
+.comments {
+  margin-top: 20px;
+  width: 50%; /* Adjust the width as needed */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style for individual comments */
+.comment {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.comment strong {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.comment span {
+  display: block;
+}
+
+/* Style for the comment form */
+.comments form {
+  margin-top: 10px;
+  width: 100%; /* Adjust the width as needed */
+}
+
+.comments textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.comments button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.comments button:hover {
+  background-color: #45a049;
+}
+

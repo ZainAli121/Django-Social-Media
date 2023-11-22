@@ -144,5 +144,14 @@ def editBio(request, pk):
 
 def post(request, pk):
     post = Post.objects.get(id=pk)
-    context = {'post': post}
+    post_comments = post.comment_set.all()
+    if request.method == 'POST':
+        comment = Comment.objects.create(
+            owner = request.user,
+            body = request.POST.get('body'),
+            post = post
+        )
+
+        return redirect('post', pk=post.id)
+    context = {'post': post, 'post_comments': post_comments}
     return render(request, 'socialapp/post.html', context)
