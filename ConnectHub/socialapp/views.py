@@ -155,3 +155,11 @@ def post(request, pk):
         return redirect('post', pk=post.id)
     context = {'post': post, 'post_comments': post_comments}
     return render(request, 'socialapp/post.html', context)
+
+@login_required(login_url='login')
+def notifications(request):
+    user = request.user
+    user_posts = user.post_set.all()
+    notifications = Comment.objects.filter(post__in=user_posts).exclude(owner=user)
+    context = {'notifications': notifications}
+    return render(request, 'socialapp/notifications.html', context)

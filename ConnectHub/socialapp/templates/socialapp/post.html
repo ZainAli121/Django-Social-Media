@@ -57,7 +57,7 @@
     </div>
     {% endif %}
   </div>
-  <script>
+  <script type="text/javascript"> 
       let btns = document.getElementsByClassName('btn');
       
       for (let i = 0; i < btns.length; i++) {
@@ -66,5 +66,8 @@
               postContent.style.display = (postContent.style.display === 'block') ? 'none' : 'block';
           });
       }
+
+      
+
       </script>
 {% endblock content %}

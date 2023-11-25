@@ -7,6 +7,7 @@ body {
 margin: 0;
 font-family: Arial, sans-serif;
 display: flex;
+background-color: hsl(205, 64%, 78%);
 }
 
 /* Vertical Navbar */
@@ -55,8 +56,8 @@ navbar-center {
 .searchbar{
   border-radius: 5px;
 background: #FFF;
-width: 500px;
-height: 40px;
+width: 510px;
+height: 35px;
 }
 .navbar-center{
   display: flex;
@@ -552,3 +553,69 @@ blockquote {
   background-color: #45a049;
 }
 
+/* ----------------Notifications */
+.inbox {
+  height: 90vh;
+}
+
+.inbox__title {
+  font-size: 2.rem;
+  font-weight: 700;
+  color: var(--color-sub);
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.inbox__title span {
+  color: var(--color-main);
+}
+
+.messages {
+  list-style: none;
+  background: var(--color-white);
+  padding: 1rem;
+  border: 2px solid var(--color-light);
+  border-radius: 0.7rem;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 2px solid var(--color-white-light);
+}
+
+.message > a {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--color-main);
+}
+
+.message--unread a span {
+  font-weight: 700;
+  color: var(--color-sub);
+}
+
+.message__author,
+.message__subject,
+.message__date {
+  flex-basis: 30%; /* Adjust as needed */
+}
+
+.message__date {
+  text-align: right;
+}
+
+.message > a span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Optional: Add hover effect for better interactivity */
+.message:hover {
+  background-color: var(--color-light);
+  transition: background-color 0.3s ease;
+}

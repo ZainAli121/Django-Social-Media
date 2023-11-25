@@ -13,5 +13,6 @@ urlpatterns = [
     path('edit-Profile/<str:pk>/', views.editProfile, name='edit-Profile'),
     path('edit-Bio/<str:pk>/', views.editBio, name='edit-Bio'),
     path('post/<str:pk>/', views.post, name='post'),
+    path('notifications/', views.notifications, name='notifications'),
     
 ]

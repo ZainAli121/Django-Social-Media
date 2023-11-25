@@ -32,17 +32,26 @@ AUTH_USER_MODEL = 'socialapp.User'
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'socialapp.apps.SocialappConfig'
+    'socialapp.apps.SocialappConfig',
+
+    'rest_framework',
+    'corsheaders',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+     "corsheaders.middleware.CorsMiddleware",
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -69,7 +78,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ConnectHub.wsgi.application'
+# WSGI_APPLICATION = 'ConnectHub.wsgi.application'
+ASGI_APPLICATION = 'ConnectHub.asgi.application'
 
 
 # Database
@@ -131,3 +141,5 @@ MEDIA_ROOT = BASE_DIR / 'static/images'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_AllOW_ALL_ORIGINS = True

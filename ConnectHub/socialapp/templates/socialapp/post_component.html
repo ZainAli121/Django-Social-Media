@@ -24,7 +24,7 @@
             <a href="#">
                 <i class="far fa-thumbs-up"></i> Like 
             </a>
-            <a href="#">
+            <a href="{% url 'post' post.id %}">
                 <i class="far fa-comment"></i>{{post.comment_set.all.count}}   Comments
             </a>
             <a href="#">
